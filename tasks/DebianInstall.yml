@@ -9,3 +9,6 @@
 
 - name: "Install AWS CloudWatch Logs Agent"
   shell: python /tmp/awslogs-agent-setup.py -n -r {{ ansible_ec2_placement_region }} -c /etc/awslogs/awslogs.conf
+  args:
+    creates: /etc/init.d/awslogs
+  register: awslog_installed
