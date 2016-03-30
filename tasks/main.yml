@@ -19,4 +19,4 @@
   service:
     name: awslogs
     state: restarted
-
+  when: awslog_installed.changed
